@@ -8,4 +8,5 @@
 (load-user-file "settings/complete-openfile.el")
 (load-user-file "settings/org-mode.el")
 (load-user-file "settings/latex.el")
+(load-user-file "settings/path.el")
 
