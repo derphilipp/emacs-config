@@ -1,0 +1,11 @@
+(load-user-file "settings/packages.el")
+(load-user-file "settings/colortheme.el")
+(load-user-file "settings/mac-keyboard.el")
+(load-user-file "settings/font.el")
+(load-user-file "settings/startup.el")
+(load-user-file "settings/editor-settings.el")
+(load-user-file "settings/shortcuts.el")
+(load-user-file "settings/complete-openfile.el")
+(load-user-file "settings/org-mode.el")
+(load-user-file "settings/latex.el")
+
