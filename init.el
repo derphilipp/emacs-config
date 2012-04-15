@@ -1,3 +1,4 @@
+(load-user-file "settings/el-get.el")
 (load-user-file "settings/packages.el")
 (load-user-file "settings/colortheme.el")
 (load-user-file "settings/mac-keyboard.el")
@@ -9,4 +10,5 @@
 (load-user-file "settings/org-mode.el")
 (load-user-file "settings/latex.el")
 (load-user-file "settings/path.el")
+(load-user-file "settings/predictive.el")
 
