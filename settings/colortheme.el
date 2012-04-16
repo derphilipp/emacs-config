@@ -1,1 +1,2 @@
-(require 'twilight-theme)
+;(require 'twilight-theme)
+(require 'tango-2-theme)

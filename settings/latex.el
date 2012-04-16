@@ -8,12 +8,13 @@
 ;jj
 ;
 ;
-
+(require 'tex-site)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq TeX-PDF-mode t)
-(setq-default ispell-program-name "hunspell")
 (setq-default TeX-master nil)
+(setq-default ispell-program-name "hunspell")
+;(setq-default TeX-master "master")
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
@@ -60,8 +61,25 @@
                              (setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
                              (setq TeX-view-program-selection '((output-pdf "Skim")))
 
+                             (ispell-change-dictionary "deutsch")
+                             (setq TeX-open-quote "„")
+                             (setq TeX-close-quote "“")
+
+; Flymake stuff
+;
+;
+  ;(defun flymake-get-tex-args (file-name)
+  ;      (list "chktex" (list "-q" "-v0" file-name)))
+
+  (defun flymake-get-tex-args (file-name)
+        (list "/opt/local/bin/chktex" (list "-g0" "-r" "-l" (expand-file-name "~/.chktexrc") "-I" "-q" "-v0" file-name)))
+    (push
+          '("^\\(\.+\.tex\\):\\([0-9]+\\):\\([0-9]+\\):\\(.+\\)"
+                 1 2 3 4) flymake-err-line-patterns)
+
 ))  
 
+(flymake-mode 1)
 
 
 ;(custom-set-variables

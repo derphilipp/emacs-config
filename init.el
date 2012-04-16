@@ -11,4 +11,7 @@
 (load-user-file "settings/latex.el")
 (load-user-file "settings/path.el")
 (load-user-file "settings/predictive.el")
-
+(load-user-file "settings/open-files.el")
+(load-user-file "settings/default-modes.el")
+(load-user-file "settings/gui.el")
+(load-user-file "settings/flymake.el")
