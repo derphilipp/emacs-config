@@ -1,0 +1,5 @@
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook 'org-toggle-pretty-entities)
+;"(add-hook 'org-mode-hook 'org-ident-mode)
+(setq org-startup-indented 1)
+(setq org-hide-leading-stars 1)
