@@ -11,6 +11,7 @@
 (require 'tex-site)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
+;(require 'predictive)
 ;(setq TeX-PDF-mode t)
 (setq-default TeX-master nil)
 (setq-default ispell-program-name "hunspell")
@@ -49,6 +50,10 @@
                              ;(setq TeX-command-default "rubber")
                              (setq TeX-save-query nil)
                              (setq TeX-show-compilation nil)
+
+                            (setq reftex-toc-split-windows-horizontally t) ; horizontally split toc window
+                            (setq reftex-toc-split-windows-fraction 0.3)   ; fraction of width of frame used
+
                              (setq-default show-trailing-whitespace t)
 
 
@@ -65,7 +70,7 @@
                              (setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
                              (setq TeX-view-program-selection '((output-pdf "Skim")))
 
-                             (ispell-change-dictionary "deutsch")
+                             (ispell-change-dictionary "american")
                              (setq TeX-open-quote "„")
                              (setq TeX-close-quote "“")
 
@@ -140,3 +145,50 @@
 
 (add-hook 'LaTeX-mode-hook
           (lambda () (local-set-key (kbd "C-0") #'run-latexmk)))
+
+;(defun reftex-format-cref (label def-fmt)
+;    (format "\\cref{%s}" label))
+;(setq reftex-format-ref-function 'reftex-format-cref)
+;
+;
+
+(custom-set-variables
+      '(ispell-dictionary "american")
+      '(ispell-program-name "/opt/local/bin/aspell"))
+
+(set-default 'ispell-local-dictionary "en_US.multi")
+(setq ispell-dictionary "english")
+
+
+
+
+(setq ispell-program-name "/opt/local/bin/aspell")
+(setq ispell-list-command "list")
+(setq ispell-extra-args '("--dont-tex-check-comments"))
+
+;(setq-default ispell-program-name "/opt/local/bin/hunspell")
+;(setq ispell-dictionary "american"
+;        ispell-extra-args '() ;; TeX mode "-t"
+;          ispell-silently-savep t
+;            )
+;
+
+;(setq-default ispell-program-name "/opt/local/bin/aspell")
+;;(setq-default aspell-program-name "/opt/local/bin/aspell")
+(setq sentence-end "[.?!][]\"’)}]*\\($\\| \\| \\)[ ;;]*") ;; Da ist ein "Newline in der Zeile!"
+(setq sentence-end-double-space nil)
+
+
+;(auto
+
+
+(put 'LaTeX-mode 'flyspell-mode-predicate 'auctex-mode-flyspell-verify)
+(defun auctex-mode-flyspell-verify ()
+  "Function used for `flyspell-generic-check-word-predicate' in auctex mode."
+  (save-excursion
+    (forward-word -2)
+    (not (looking-at "bibliographystyle{"))))
+
+(add-hook 'LaTeX-mode-hook
+  (lambda () (setq flyspell-generic-check-word-predicate    
+    'auctex-mode-flyspell-verify))) 

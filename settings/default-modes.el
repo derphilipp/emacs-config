@@ -24,4 +24,3 @@
 (require 'auto-complete-config)
 (setq ac-modes '(c++-mode sql-mode LaTeX/MPS))
 (global-auto-complete-mode t)
-;(require 'auto-complete-mode)
