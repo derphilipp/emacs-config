@@ -2,4 +2,5 @@ elpa
 history
 savehist
 init.elc
+ac-comphist.dat
 
