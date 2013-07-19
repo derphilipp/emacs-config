@@ -41,9 +41,9 @@
 
 
 
-  (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive")
-  (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/html")
-  (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/latex")
-  (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/misc")
-  (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/texinfo")
-  (require 'predictive)
+ ; (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive")
+ ; (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/html")
+ ; (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/latex")
+ ; (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/misc")
+ ; (add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d/predictive/texinfo")
+ ; (require 'predictive)

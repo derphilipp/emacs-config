@@ -1,5 +1,18 @@
 ;#(setq visible-bell t)
 
+  ;(add-to-list 'load-path "~/.emacs.d/evil")
+(add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d//elpa/evil-20130325.833")
+     (require 'evil)
+     (evil-mode 1)
+
+
+
+(require 'key-chord)
+(setq key-chord-two-keys-delay 1.4)
+(add-to-list 'load-path "/Volumes/Data/Users/phw/.emacs.d//elpa/key-chord-20080915.2156/")
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
+
 
 (defun my-bell-function ()
   (unless (memq this-command
